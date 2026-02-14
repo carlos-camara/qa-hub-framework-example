@@ -7,6 +7,11 @@ def before_all(context):
     FrameworkHooks.bootstrap(context, default_lang="en")
 
 def before_scenario(context, scenario):
+    # Skip browser initialization for API tests
+    tags = list(scenario.tags) + list(scenario.feature.tags)
+    if 'api' in tags or 'API' in tags:
+        return
+        
     FrameworkHooks.before_scenario(context, scenario)
 
 def after_step(context, step):
