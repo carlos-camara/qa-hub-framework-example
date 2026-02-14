@@ -36,17 +36,27 @@ def step_wait_for_text_visible(context, text):
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.common.by import By
     
-    timeout = 10
+    timeout = 15
     ContextualLogger.info(f"Waiting up to {timeout}s for text: '{text}'", context)
     
     def check_text(driver):
         try:
             body_text = driver.find_element(By.TAG_NAME, "body").text
-            return text.lower() in body_text.lower()
+            if text.lower() in body_text.lower():
+                return True
+            # Log current state periodically if not found (debugging)
+            return False
         except Exception:
             return False
 
-    WebDriverWait(context.driver, timeout).until(
-        check_text,
-        message=f"Timed out waiting for text '{text}' to appear on the page"
-    )
+    try:
+        WebDriverWait(context.driver, timeout).until(
+            check_text,
+            message=f"Timed out waiting for text '{text}'"
+        )
+    except Exception as e:
+        # Diagnostic capture on failure
+        current_url = context.driver.current_url
+        current_title = context.driver.title
+        ContextualLogger.error(f"Wait Failed. URL: {current_url}, Title: {current_title}", context)
+        raise e

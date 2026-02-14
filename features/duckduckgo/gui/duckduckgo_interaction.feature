@@ -8,10 +8,14 @@ Feature: DuckDuckGo Search Functionality
 
   @smoke
   Scenario: Basic Search Verification
+    # Handle optional consent if needed (CI depends on IP location)
+    And I handle the consent popup
+
     # Perform Search
     When I type "QA Hub Framework" into the "search_input"
-    And I press the "ENTER" key on the element "search_input"
+    And I click on the "search_button"
     
     # Validation
-    Then I wait until the text "QA Hub Framework" is visible
+    Then I should see the "results_container"
+    And I wait until the text "QA Hub Framework" is visible
     And I should see the text "QA Hub Framework"

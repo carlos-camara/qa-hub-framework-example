@@ -8,17 +8,15 @@ duckduckgo_home:
   search_button:
     type: button
     by: css
-    value: "button[aria-label='Search'], button[type='submit'], #search_button_homepage"
+    value: "button[aria-label='Search'], button[type='submit'], #search_button_homepage, [role='button'][aria-label='Search']"
     wait_load: false
-  logo:
+  cookie_button:
+    type: button
+    by: css
+    value: "#feedback-link, .set-cookie-notice__button"
+    wait_load: false
+  results_container:
     type: webelement
     by: css
-    value: >-
-      a[href='/'], .header__logo, #logo_homepage, #logo_homepage_link,
-      img[alt*='DuckDuckGo']
-    wait_load: false
-  results_stats:
-    type: text
-    by: id
-    value: links_wrapper
+    value: "#links, .results--main, #links_wrapper"
     wait_load: false
