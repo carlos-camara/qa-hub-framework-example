@@ -2,19 +2,18 @@
 
 # 🧪 QA Hub Framework Example
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/release/python-3100/)
-[![Lint Status](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg)](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/lint.yml)
-[![Tests Status](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg)](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/tests.yml)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Carlos/qa-hub-framework-example/graphs/commit-activity)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-3100/)
+[![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
+[![Tests Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/graphs/commit-activity)
 
-> **A professional, minimal example of how to use QA Hub Framework to validate web applications.**
+**A professional, minimal example of how to use QA Hub Framework to validate web applications.**
 
 [Key Features](#-key-features) • [Quick Start](#-quick-start) • [Project Structure](#-project-structure) • [CI/CD](#-cicd)
 
-</div>
-
 ---
+</div>
 
 ## 🌟 Overview
 
@@ -38,51 +37,49 @@ pip install -r requirements.txt
 
 ### 3. Running Tests
 
-#### 🖥️ Run GUI Tests (DuckDuckGo Search)
+#### 🖥️ GUI Verification
 ```bash
-python -m qa_framework.cli run --path features/duckduckgo/gui/duckduckgo_interaction.feature --tags @smoke
+python -m qa_framework.cli run --path features/duckduckgo/gui --tags @smoke
 ```
 
-#### 🌐 Run API Tests (Connectivity)
+#### 🌐 API Verification
 ```bash
-python -m qa_framework.cli run --path features/duckduckgo/api/duckduckgo_api.feature --tags @smoke
+python -m qa_framework.cli run --path features/duckduckgo/api --tags @smoke
 ```
 
 ## 🏗️ Project Structure
 
 ```text
 ├── .github/
-│   ├── workflows/       # CI Github Actions
+│   ├── workflows/       # Modular CI/CD Pipelines (Lint & Tests)
 │   └── pull_request_template.md
 ├── features/
-│   ├── config/          # Configuration (Browser, Environment)
-│   ├── duckduckgo/      # DuckDuckGo Test Suite
-│   │   ├── api/         # API Test Scenarios
-│   │   └── gui/         # GUI Test Scenarios
-│   ├── page_objects/    # YAML Locators (Zero-Code POM)
-│   ├── steps/           # Custom step definitions
-│   └── environment.py   # Framework Hooks (The "Glue")
+│   ├── config/          # Environment & Browser Configuration
+│   ├── duckduckgo/      # DuckDuckGo Test Scenarios (API & GUI)
+│   ├── page_objects/    # Zero-Code YAML Locators
+│   ├── steps/           # Shared & Custom Step Definitions
+│   └── environment.py   # Global Framework Hooks
 ├── .gitignore
 ├── requirements.txt
 └── README.md
 ```
 
-## 🧩 Key Features Demonstrated
+## 🧩 Key Features
 
-1.  **Zero-Code Page Objects**: Define locators in clean YAML files. No more brittle selector classes.
-2.  **English-like Steps**: Feature files that stakeholders can actually read.
-3.  **Hybrid Testing**: Seamlessly mix API and GUI checks in the same project.
-4.  **Integrated Logging**: Automatic `ContextualLogger` support for crystal-clear test logs.
-5.  **Failure Analysis**: Automatic screenshots on GUI failures.
+*   **Zero-Code Page Objects**: Define locators in clean YAML. No more brittle selector classes.
+*   **Human-Readable Verification**: Gherkin steps designed for clarity and reusability.
+*   **Hybrid Testing Engine**: Seamless orchestration of API and Selenium/Playwright tests.
+*   **Contextual Logging**: Automatic traceability with built-in `ContextualLogger`.
+*   **Automated Proof of Work**: Automatic screenshots and reports on execution failures.
 
-## 🤖 CI/CD
+## 🤖 CI/CD Infrastructure
 
-The project includes a GitHub Actions workflow (`.github/workflows/ci.yml`) that automatically:
-- Lints the codebase using `black` and `flake8`.
-- Runs Smoke Tests (API & GUI) on every Push and Pull Request.
+The project utilizes modular GitHub Actions for automated quality gates:
+- **💅 Lint Codebase**: Automated style checks using global standards.
+- **🧪 Standard Test Suite**: Automated execution of all smoke tests on every PR.
 
 ---
 
-<p align="center">
-  Built by Carlos Camara
-</p>
+<div align="center">
+  Built with ❤️ by <b>Carlos Camara</b>
+</div>
