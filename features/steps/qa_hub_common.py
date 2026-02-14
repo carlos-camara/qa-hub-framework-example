@@ -1,4 +1,4 @@
-from behave import given, when, then
+from behave import given, when, then, step
 from qa_framework.steps.common_steps import *
 from qa_framework.steps.gui_steps import *
 from qa_framework.steps.api_steps import *
@@ -10,7 +10,7 @@ import time
 # Custom Steps for Missing Framework Functionality
 # ---------------------------------------------------------
 
-@given('I handle the consent popup')
+@step('I handle the consent popup')
 def step_handle_consent(context):
     """
     Conditionally click the consent button if it appears.
@@ -27,7 +27,7 @@ def step_handle_consent(context):
         ContextualLogger.debug(f"Consent popup not found or could not be clicked: {str(e)}", context)
         pass  # If not found or not clickable, we ignore and continue
 
-@then('I wait until the text "{text}" is visible')
+@step('I wait until the text "{text}" is visible')
 def step_wait_for_text_visible(context, text):
     """
     Wait until the specified text is present in the page body.
