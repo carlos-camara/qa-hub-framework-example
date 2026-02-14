@@ -1,80 +1,76 @@
 # 🧪 QA Hub Framework Example
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-3100/)
-[![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
-[![Tests Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/graphs/commit-activity)
-
-**A professional, minimal example of how to use QA Hub Framework to validate web applications.**
-
-[Key Features](#-key-features) • [Quick Start](#-quick-start) • [Project Structure](#-project-structure) • [CI/CD](#-cicd)
-
-## 🌟 Overview
-
-This project demonstrates a real-world implementation of the **QA Hub Framework** to test **DuckDuckGo Search** (GUI) and **DuckDuckGo Availability** (API). It serves as a blueprint for building scalable, maintainable, and readable automation suites.
-
-## 🚀 Quick Start
-
-### 1. Prerequisites
-- **Python 3.10+**
-- **Chrome Browser** (for GUI tests)
-
-### 2. Installation
-To install the project and the framework dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-> [!NOTE]
-> This command will automatically download and install the **latest version** of `qa-hub-framework` directly from GitHub.
-
-### 3. Running Tests
-
-#### 🖥️ GUI Verification
-```bash
-python -m qa_framework.cli run --path features/duckduckgo/gui --tags @smoke
-```
-
-#### 🌐 API Verification
-```bash
-python -m qa_framework.cli run --path features/duckduckgo/api --tags @smoke
-```
-
-## 🏗️ Project Structure
-
-```text
-├── .github/
-│   ├── workflows/       # Modular CI/CD Pipelines (Lint & Tests)
-│   └── pull_request_template.md
-├── features/
-│   ├── config/          # Environment & Browser Configuration
-│   ├── duckduckgo/      # DuckDuckGo Test Scenarios (API & GUI)
-│   ├── page_objects/    # Zero-Code YAML Locators
-│   ├── steps/           # Shared & Custom Step Definitions
-│   └── environment.py   # Global Framework Hooks
-├── .gitignore
-├── requirements.txt
-└── README.md
-```
-
-## 🧩 Key Features
-
-*   **Zero-Code Page Objects**: Define locators in clean YAML. No more brittle selector classes.
-*   **Human-Readable Verification**: Gherkin steps designed for clarity and reusability.
-*   **Hybrid Testing Engine**: Seamless orchestration of API and Selenium/Playwright tests.
-*   **Contextual Logging**: Automatic traceability with built-in `ContextualLogger`.
-*   **Automated Proof of Work**: Automatic screenshots and reports on execution failures.
-
-## 🤖 CI/CD Infrastructure
-
-The project utilizes modular GitHub Actions for automated quality gates:
-- **💅 Lint Codebase**: Automated style checks using global standards.
-- **🧪 Standard Test Suite**: Automated execution of all smoke tests on every PR.
+<div align="center">
+  <img src="https://raw.githubusercontent.com/carlos-camara/qa-hub-framework-example/main/assets/logo.png" width="160" alt="QA Hub Logo">
+  
+  ### Better Testing. Faster Feedback. Total Confidence.
+  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+  [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-3100/)
+  [![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
+  [![Tests Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
+  
+  **A world-class blueprint for modern automated quality assurance.**
+</div>
 
 ---
 
-<div align="center">
-  Built with by <b>Carlos Camara</b>
-</div>
+## 🌟 Overview
+
+The **QA Hub Framework Example** is a premium reference implementation designed to showcase how to build scalable, hybrid automation suites (API + GUI) using the **QA Hub Framework**. 
+
+Built for speed, readability, and maintainability, it provides a clean structure that bridges the gap between technical implementation and business requirements.
+
+## 🎯 Key Pillars
+
+| Pillar | Description |
+| :--- | :--- |
+| **🚀 Speed** | Parallel execution and optimized environment setup for rapid feedback. |
+| **🧩 Modularity** | True separation of concerns with YAML-based Page Objects and shared steps. |
+| **📊 Visibility** | Contextual logging and automated failure artifacts (screenshots, reports). |
+| **🛡️ Health** | Integrated CI/CD gates for linting and regression testing. |
+
+## 🚀 Getting Started
+
+### 1. Simple Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/carlos-camara/qa-hub-framework-example
+cd qa-hub-framework-example
+
+# Install dependencies (Framework included)
+pip install -r requirements.txt
+```
+
+### 2. Run your first test
+
+| Target | Command |
+| :--- | :--- |
+| **GUI (Search)** | `python -m qa_framework.cli run --path features/duckduckgo/gui --tags '@smoke'` |
+| **API (Connectivity)** | `python -m qa_framework.cli run --path features/duckduckgo/api --tags '@smoke'` |
+
+## 🏗️ Premium Architecture
+
+```text
+├── .github/             # Modular CI/CD (Lint, Tests, Dependabot)
+├── features/
+│   ├── config/          # Centralized configuration
+│   ├── duckduckgo/      # Domain-specific test scenarios
+│   ├── page_objects/    # Zero-Code YAML Locators (POM)
+│   ├── steps/           # Reusable Gherkin glue
+│   └── environment.py   # Global framework lifecycle hooks
+└── docs/                # Extended documentation (Step Reference, etc.)
+```
+
+## 🔧 Developer Experience (DX)
+
+- **One-Click Linting**: Run `lint_local.bat` to verify your changes locally.
+- **Auto-Updates**: Stay secure and current with built-in Dependabot integration.
+- **Issue Templates**: Professional interaction with standardized contribution flows.
+
+---
+
+<p align="center">
+  Built with excellence by <b>Carlos Camara</b>
+</p>
