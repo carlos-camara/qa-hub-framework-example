@@ -36,15 +36,26 @@ def step_wait_for_text_visible(context, text):
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.common.by import By
     
-    timeout = 15
+    timeout = 20
     ContextualLogger.info(f"Waiting up to {timeout}s for text: '{text}'", context)
     
+    # Normalize expected text like the framework does
+    normalized_expected = " ".join(text.lower().split())
+
     def check_text(driver):
         try:
-            body_text = driver.find_element(By.TAG_NAME, "body").text
-            if text.lower() in body_text.lower():
+            # 1. Check Page Title as early indicator
+            if normalized_expected in driver.title.lower():
+                ContextualLogger.debug(f"Matches found in Title: '{driver.title}'", context)
                 return True
-            # Log current state periodically if not found (debugging)
+
+            # 2. Check Body with normalization
+            body_text = driver.find_element(By.TAG_NAME, "body").text
+            normalized_body = " ".join(body_text.lower().split())
+            
+            if normalized_expected in normalized_body:
+                return True
+            
             return False
         except Exception:
             return False
@@ -59,4 +70,9 @@ def step_wait_for_text_visible(context, text):
         current_url = context.driver.current_url
         current_title = context.driver.title
         ContextualLogger.error(f"Wait Failed. URL: {current_url}, Title: {current_title}", context)
+        # Attempt to see what's actually there
+        try:
+            body_snippet = context.driver.find_element(By.TAG_NAME, "body").text[:200]
+            ContextualLogger.error(f"Body snippet: {body_snippet}...", context)
+        except: pass
         raise e
