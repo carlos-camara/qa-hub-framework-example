@@ -13,10 +13,15 @@ duckduckgo_home:
   cookie_button:
     type: button
     by: css
-    value: "#feedback-link, .set-cookie-notice__button"
+    value: "#feedback-link, .set-cookie-notice__button, .cookie-notice__button"
     wait_load: false
   results_container:
     type: webelement
     by: css
-    value: "#links, .results--main, #links_wrapper"
+    value: "#links, .results--main, [data-testid='mainline']"
+    wait_load: false
+  first_result:
+    type: webelement
+    by: css
+    value: "article[data-testid='result'], .result__body, #r1-0"
     wait_load: false

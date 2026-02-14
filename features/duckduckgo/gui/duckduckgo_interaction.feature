@@ -12,10 +12,11 @@ Feature: DuckDuckGo Search Functionality
     And I handle the consent popup
 
     # Perform Search
-    When I type "QA Hub Framework" into the "search_input"
+    When I type "Selenium" into the "search_input"
     And I click on the "search_button"
     
     # Validation
     Then I should see the "results_container"
-    And I wait until the text "QA Hub Framework" is visible
-    And I should see the text "QA Hub Framework"
+    And I should see the "first_result"
+    And I wait until the text "Selenium" is visible
+    And I should see the text "Selenium"
