@@ -1,6 +1,6 @@
 ---
 Driver:
-  headless: false
+  headless: true
   type: chrome
   # version: auto (managed by webdriver-manager)
 
