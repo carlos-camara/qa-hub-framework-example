@@ -1,7 +1,8 @@
+<!-- markdownlint-disable MD041 -->
 <div align="center">
 
 # QA Hub Framework Example
-### 🚀 Enterprise-Grade Test Automation Standard
+## 🚀 Enterprise-Grade Test Automation Standard
 
 [![CI Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
 [![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
@@ -136,9 +137,9 @@ qa-hub-framework-example/
 
 We commit to the highest standards of engineering excellence.
 
-*   **Security**: Please refer to our [Security Policy](SECURITY.md).
-*   **Conduct**: We foster an inclusive environment via our [Code of Conduct](CODE_OF_CONDUCT.md).
-*   **Contribution**: Want to help? Check out our [Contributing Guidelines](.github/CONTRIBUTING.md).
+* **Security**: Please refer to our [Security Policy](SECURITY.md).
+* **Conduct**: We foster an inclusive environment via our [Code of Conduct](CODE_OF_CONDUCT.md).
+* **Contribution**: Want to help? Check out our [Contributing Guidelines](.github/CONTRIBUTING.md).
 
 ---
 
