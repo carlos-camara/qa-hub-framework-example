@@ -4,7 +4,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/release/python-3100/)
-[![CI Status](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/ci.yml/badge.svg)](https://github.com/Carlos/qa-hub-framework-example/actions)
+[![Lint Status](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg)](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/lint.yml)
+[![Tests Status](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg)](https://github.com/Carlos/qa-hub-framework-example/actions/workflows/tests.yml)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Carlos/qa-hub-framework-example/graphs/commit-activity)
 
 > **A professional, minimal example of how to use QA Hub Framework to validate web applications.**

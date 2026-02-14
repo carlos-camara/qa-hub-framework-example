@@ -1,0 +1,21 @@
+name: 💅 Lint Codebase
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run Generic Linter
+        uses: Carlos/qa-hub-actions/lint-codebase@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          validate-python: 'true'
+          validate-yaml: 'true'
+          validate-markdown: 'true'
