@@ -1,3 +1,4 @@
+---
 name: 🧪 Standard Test Suite
 
 on:
@@ -21,8 +22,10 @@ jobs:
         uses: carlos-camara/qa-hub-actions/run-tests@main
         with:
           project-name: 'duckduckgo-example'
-          test-command-api: "python -m qa_framework.cli run --path features/duckduckgo/api --tags '@smoke'"
-          test-command-gui: "python -m qa_framework.cli run --path features/duckduckgo/gui --tags '@smoke'"
+          test-command-api: >-
+            python -m qa_framework.cli run --path features/duckduckgo/api --tags '@smoke'
+          test-command-gui: >-
+            python -m qa_framework.cli run --path features/duckduckgo/gui --tags '@smoke'
           headless: 'true'
           
       - name: Upload Test Results

@@ -96,6 +96,6 @@ pip install -r requirements.txt
 
 ---
 
-<p align="center">
-  Crafted with excellence by <b>Carlos Camara</b>
-</p>
+<div align="center">
+  <i>Designed & Engineered by <b>[Carlos Cámara](https://github.com/carlos-camara)</b></i>
+</div>
