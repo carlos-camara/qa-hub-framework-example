@@ -1,5 +1,3 @@
-<div align="center">
-
 # 🧪 QA Hub Framework Example
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
@@ -11,9 +9,6 @@
 **A professional, minimal example of how to use QA Hub Framework to validate web applications.**
 
 [Key Features](#-key-features) • [Quick Start](#-quick-start) • [Project Structure](#-project-structure) • [CI/CD](#-cicd)
-
----
-</div>
 
 ## 🌟 Overview
 
