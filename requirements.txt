@@ -1,6 +1,7 @@
 # QA Hub Framework Example Dependencies
 # This project relies on the qa-hub-framework repository.
-# The following line installs the framework directly from GitHub.
-
 git+https://github.com/carlos-camara/qa-hub-framework.git
 
+# Core Dependencies (Ensuring availability in CI)
+webdriver-manager>=4.0.0
+selenium>=4.19.0
