@@ -13,10 +13,10 @@ Feature: DuckDuckGo Search Functionality
 
     # Perform Search
     When I type "Selenium" into the "search_input"
-    And I click on the "search_button"
+    And I press the "ENTER" key on the element "search_input"
     
     # Validation
     Then I should see the "results_container"
-    And I should see the "first_result"
     And I wait until the text "Selenium" is visible
+    And I should see the "first_result"
     And I should see the text "Selenium"

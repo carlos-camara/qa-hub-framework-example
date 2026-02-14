@@ -18,10 +18,10 @@ duckduckgo_home:
   results_container:
     type: webelement
     by: css
-    value: "#links, .results--main, [data-testid='mainline']"
+    value: "#links, .results--main, [data-testid='mainline'], .results"
     wait_load: false
   first_result:
     type: webelement
     by: css
-    value: "article[data-testid='result'], .result__body, #r1-0"
+    value: "article[data-testid='result'], .result__body, #r1-0, .result, .results_links_deep"
     wait_load: false
