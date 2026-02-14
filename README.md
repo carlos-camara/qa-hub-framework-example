@@ -67,9 +67,9 @@ graph TD
         Steps -->|Configure| Config[Env Config]
     end
     
-    style User fill:#f9f,stroke:#333
-    style CLI fill:#bbf,stroke:#333
-    style Runner fill:#bfb,stroke:#333
+    style User fill:#e6f3ff,stroke:#2b6cb0,stroke-width:2px,color:#000
+    style CLI fill:#f3e8ff,stroke:#6b46c1,stroke-width:2px,color:#000
+    style Runner fill:#e6fffa,stroke:#2c7a7b,stroke-width:2px,color:#000
 ```
 
 ---
