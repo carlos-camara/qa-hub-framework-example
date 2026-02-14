@@ -1,6 +1,7 @@
 ---
 Driver:
   headless: true
+  no_sandbox: true
   type: chrome
   # version: auto (managed by webdriver-manager)
 
