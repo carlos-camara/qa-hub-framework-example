@@ -1,0 +1,22 @@
+---
+duckduckgo_home:
+  search_input:
+    type: input
+    by: id
+    value: searchbox_input
+    wait_load: true
+  search_button:
+    type: button
+    by: css
+    value: button[aria-label="Search"]
+    wait_load: false
+  logo:
+    type: webelement
+    by: css
+    value: "a[href='/'], .header__logo, #logo_homepage, #logo_homepage_link, img[alt*='DuckDuckGo']"
+    wait_load: false
+  results_stats:
+    type: text
+    by: id
+    value: links_wrapper
+    wait_load: false

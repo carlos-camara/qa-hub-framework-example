@@ -1,0 +1,11 @@
+---
+Driver:
+  headless: false
+  type: chrome
+  # version: auto (managed by webdriver-manager)
+
+VisualTests:
+  enabled: true
+  fail: true
+  save: false
+  baseline_name: "base"
