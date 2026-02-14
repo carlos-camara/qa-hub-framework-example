@@ -81,5 +81,5 @@ The project utilizes modular GitHub Actions for automated quality gates:
 ---
 
 <div align="center">
-  Built with ❤️ by <b>Carlos Camara</b>
+  Built with by <b>Carlos Camara</b>
 </div>
