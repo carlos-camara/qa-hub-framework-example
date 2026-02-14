@@ -1,7 +1,6 @@
 # 🧪 QA Hub Framework Example
 
 <div align="center">
-  <img src="assets/logo.png" width="180" alt="QA Hub Logo">
   
 ## Better Testing • Faster Feedback • Total Confidence
   
