@@ -1,99 +1,105 @@
 # 🧪 QA Hub Framework Example
+> **Accelerating Quality with Enterprise-Grade Automation Patterns**
 
-<div align="center">
-  <h3>Better Testing • Faster Feedback • Total Confidence</h3>
-  
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-  [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-3100/)
-  [![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
-  [![Tests Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
-  
-  **A premier reference implementation for the QA Hub Framework.**
-</div>
+[![CI Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
+[![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🌟 Overview
+## 🏛️ Project Overview
 
-The **QA Hub Framework Example** showcases how to build world-class, hybrid automation suites (API + GUI) using specialized **QA Hub** patterns. This repository serves as a blueprint for engineering leads and specialized QA engineers who seek to bridge the gap between technical excellence and business value.
+This repository serves as the **official reference implementation** for the [QA Hub Framework](https://github.com/carlos-camara/qa-hub-framework). It demonstrates how to build scalable, maintainable, and highly professional automated testing suites for both Web and API layers.
 
-## 🏗️ Technical Architecture
+Designed for engineers who demand **rigor without complexity**, this project showcases modern testing excellence through clean code, structured YAML locators, and seamless CI/CD integration.
 
-This project strictly adheres to the **QA Hub Decoupled Architecture**, ensuring that test logic remains independent of implementation details and environment configurations.
+---
+
+## 💎 Core Pillars
+
+| Pillar | Description |
+| :--- | :--- |
+| **Maintainability** | Decoupled locators via YAML-based Page Object patterns. |
+| **Genericity** | Reusable Gherkin steps that minimize boilerplate code. |
+| **Observability** | Context-aware logging and automated artifact capture (screenshots/trace). |
+| **Agility** | Standardized CLI for local execution and rapid feedback loops. |
+
+---
+
+## 🛠️ Technical Architecture
+
+The architecture is built on a **Layered Strategy**, ensuring that changes in the UI or API don't ripple through the entire test suite.
 
 ```mermaid
 graph TD
-    subgraph "Scenario Layer"
-        F[Gherkin Features]
-    end
-    subgraph "Implementation Layer"
-        S[Step Definitions]
-        E[Environment Hooks]
-    end
-    subgraph "Data & Locators"
-        P[YAML Page Objects]
-        C[Config YAMLs]
-    end
-    subgraph "QA Hub Core"
-        QA[Framework Engine]
-    end
-
-    F --> S
-    S --> QA
-    QA --> P
-    QA --> C
-    E --> QA
+    A[Gherkin Features] -->|Triggers| B[Common Step Definitions]
+    B -->|Utilizes| C[QA Hub Framework Core]
+    C -->|Resolves| D[YAML Locator Engine]
+    D -->|Interfaces| E[Browser / API]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style C fill:#bbf,stroke:#333,stroke-width:4px
+    style E fill:#bfb,stroke:#333,stroke-width:2px
 ```
 
-## 🎯 Value Propositions
-
-- **🚀 Velocity**: Out-of-the-box support for parallel execution and optimized CI/CD pipelines.
-- **🧩 Composability**: Leverage existing framework steps or create your own with minimal boilerplate.
-- **📊 Observability**: Built-in `ContextualLogger` and automatic artifact generation on failures.
-- **🛡️ Quality Gates**: Standardized linting and regression testing integrated into every Pull Request.
+---
 
 ## 🚀 Quick Start
 
-### 1. Installation
-
+### 1. Environment Setup
 ```bash
 # Clone the repository
-git clone https://github.com/carlos-camara/qa-hub-framework-example
+git clone https://github.com/carlos-camara/qa-hub-framework-example.git
+cd qa-hub-framework-example
 
-# Install everything with one command
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Execution Registry
+### 2. Running Tests
+Leverage the standard **QA Hub CLI** for powerful execution control:
 
-| Target | Core Command |
-| :--- | :--- |
-| **GUI Context** | `python -m qa_framework.cli run --path features/duckduckgo/gui --tags '@smoke'` |
-| **API Context** | `python -m qa_framework.cli run --path features/duckduckgo/api --tags '@smoke'` |
+```bash
+# Run all smoke tests
+python -m qa_framework.cli run --tags @smoke
+
+# Run a specific feature in headless mode
+python -m qa_framework.cli run --path features/duckduckgo/gui/ --headless
+```
+
+---
 
 ## 📁 Repository Blueprint
 
 ```text
-├── .github/             # Modular CI/CD & Project Governance
-├── assets/              # Branding & Visual Identity
+qa-hub-framework-example/
+├── .github/workflows/       # Modular CI/CD Pipelines (Lint & Test)
 ├── features/
-│   ├── config/          # Environment-driven Configuration
-│   ├── duckduckgo/      # Domain-specific Scenarios
-│   ├── page_objects/    # Zero-Code YAML Locators (POM)
-│   ├── steps/           # Reusable Step Logic
-│   └── environment.py   # Global Hook Registry
-└── docs/                # Technical Documentation & Guides
+│   ├── config/             # Environment-specific configuration
+│   ├── page_objects/       # YAML-based Locator Definitions
+│   ├── steps/              # Minimalistic project-specific steps
+│   └── *.feature           # Narrative-driven test scenarios
+├── requirements.txt         # Standard Framework Integration
+└── README.md                # Project documentation
 ```
-
-## 🔧 Developer Experience (DX)
-
-- **Local Validation**: Run `lint_local.bat` to ensure code compliance before pushing.
-- **Self-Healing Dependencies**: Automated weekly updates via **Dependabot**.
-- **Guided Contributions**: Clear `CONTRIBUTING.md` and Issue Templates for seamless collaboration.
-- **API/GUI Step Library**: Reference `docs/steps.md` for the full Gherkin vocabulary.
 
 ---
 
-<div align="center">
-  <i>Designed & Engineered by <b>[Carlos Cámara](https://github.com/carlos-camara)</b></i>
-</div>
+## 🛡️ Governance & Quality
+
+We adhere to the highest standards of professional software development:
+
+*   **Security First**: Review our [Security Policy](SECURITY.md) for vulnerability reporting.
+*   **Community Standards**: Our [Code of Conduct](CODE_OF_CONDUCT.md) ensures a professional and inclusive environment.
+*   **Automated Quality**: Every PR is subjected to rigorous linting and functional verification via GitHub Actions.
+
+---
+
+<p align="center">
+  <i>Maintained with ❤️ by the QA Hub Community</i>
+</p>
