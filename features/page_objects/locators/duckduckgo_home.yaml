@@ -2,13 +2,13 @@
 duckduckgo_home:
   search_input:
     type: input
-    by: id
-    value: searchbox_input
+    by: css
+    value: "#searchbox_input, #search_form_input_homepage, input[name='q']"
     wait_load: true
   search_button:
     type: button
     by: css
-    value: button[aria-label="Search"]
+    value: "button[aria-label='Search'], button[type='submit'], #search_button_homepage"
     wait_load: false
   logo:
     type: webelement
