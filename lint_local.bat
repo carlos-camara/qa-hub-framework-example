@@ -1,0 +1,9 @@
+@echo off
+echo 💅 Running local lint checks...
+echo 🐍 Checking Python style (flake8)...
+flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+echo 📖 Checking Markdown style...
+echo (Note: Markdown linting usually requires npm or docker, skipping for now)
+echo ✅ Done!
+pause
