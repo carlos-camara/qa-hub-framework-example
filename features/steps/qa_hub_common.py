@@ -44,17 +44,16 @@ def step_wait_for_text_visible(context, text):
 
     def check_text(driver):
         try:
-            # 1. Check Page Title as early indicator
-            if normalized_expected in driver.title.lower():
-                ContextualLogger.debug(f"Matches found in Title: '{driver.title}'", context)
-                return True
-
-            # 2. Check Body with normalization
+            # Check Body with normalization (strict check for content presence)
             body_text = driver.find_element(By.TAG_NAME, "body").text
             normalized_body = " ".join(body_text.lower().split())
             
             if normalized_expected in normalized_body:
                 return True
+            
+            # Log Page Title as debug info only, not as a success indicator
+            if normalized_expected in driver.title.lower():
+                ContextualLogger.debug(f"Matches found in Title: '{driver.title}', waiting for body content...", context)
             
             return False
         except Exception:
