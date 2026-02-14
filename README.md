@@ -1,76 +1,101 @@
 # 🧪 QA Hub Framework Example
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/carlos-camara/qa-hub-framework-example/main/assets/logo.png" width="160" alt="QA Hub Logo">
+  <img src="assets/logo.png" width="180" alt="QA Hub Logo">
   
-  ### Better Testing. Faster Feedback. Total Confidence.
+  ### Better Testing • Faster Feedback • Total Confidence
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
   [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-3100/)
   [![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
   [![Tests Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg?style=flat-square)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
   
-  **A world-class blueprint for modern automated quality assurance.**
+  **A premier reference implementation for the QA Hub Framework.**
 </div>
 
 ---
 
 ## 🌟 Overview
 
-The **QA Hub Framework Example** is a premium reference implementation designed to showcase how to build scalable, hybrid automation suites (API + GUI) using the **QA Hub Framework**. 
+The **QA Hub Framework Example** showcases how to build world-class, hybrid automation suites (API + GUI) using specialized **QA Hub** patterns. This repository serves as a blueprint for engineering leads and specialized QA engineers who seek to bridge the gap between technical excellence and business value.
 
-Built for speed, readability, and maintainability, it provides a clean structure that bridges the gap between technical implementation and business requirements.
+## 🏗️ Technical Architecture
 
-## 🎯 Key Pillars
+This project strictly adheres to the **QA Hub Decoupled Architecture**, ensuring that test logic remains independent of implementation details and environment configurations.
 
-| Pillar | Description |
-| :--- | :--- |
-| **🚀 Speed** | Parallel execution and optimized environment setup for rapid feedback. |
-| **🧩 Modularity** | True separation of concerns with YAML-based Page Objects and shared steps. |
-| **📊 Visibility** | Contextual logging and automated failure artifacts (screenshots, reports). |
-| **🛡️ Health** | Integrated CI/CD gates for linting and regression testing. |
+```mermaid
+graph TD
+    subgraph "Scenario Layer"
+        F[Gherkin Features]
+    end
+    subgraph "Implementation Layer"
+        S[Step Definitions]
+        E[Environment Hooks]
+    end
+    subgraph "Data & Locators"
+        P[YAML Page Objects]
+        C[Config YAMLs]
+    end
+    subgraph "QA Hub Core"
+        QA[Framework Engine]
+    end
 
-## 🚀 Getting Started
+    F --> S
+    S --> QA
+    QA --> P
+    QA --> C
+    E --> QA
+```
 
-### 1. Simple Setup
+## 🎯 Value Propositions
+
+- **🚀 Velocity**: Out-of-the-box support for parallel execution and optimized CI/CD pipelines.
+- **🧩 Composability**: Leverage existing framework steps or create your own with minimal boilerplate.
+- **📊 Observability**: Built-in `ContextualLogger` and automatic artifact generation on failures.
+- **🛡️ Quality Gates**: Standardized linting and regression testing integrated into every Pull Request.
+
+## 🚀 Quick Start
+
+### 1. Installation
 
 ```bash
 # Clone the repository
 git clone https://github.com/carlos-camara/qa-hub-framework-example
-cd qa-hub-framework-example
 
-# Install dependencies (Framework included)
+# Install everything with one command
 pip install -r requirements.txt
 ```
 
-### 2. Run your first test
+### 2. Execution Registry
 
-| Target | Command |
+| Target | Core Command |
 | :--- | :--- |
-| **GUI (Search)** | `python -m qa_framework.cli run --path features/duckduckgo/gui --tags '@smoke'` |
-| **API (Connectivity)** | `python -m qa_framework.cli run --path features/duckduckgo/api --tags '@smoke'` |
+| **GUI Context** | `python -m qa_framework.cli run --path features/duckduckgo/gui --tags '@smoke'` |
+| **API Context** | `python -m qa_framework.cli run --path features/duckduckgo/api --tags '@smoke'` |
 
-## 🏗️ Premium Architecture
+## 📁 Repository Blueprint
 
 ```text
-├── .github/             # Modular CI/CD (Lint, Tests, Dependabot)
+├── .github/             # Modular CI/CD & Project Governance
+├── assets/              # Branding & Visual Identity
 ├── features/
-│   ├── config/          # Centralized configuration
-│   ├── duckduckgo/      # Domain-specific test scenarios
+│   ├── config/          # Environment-driven Configuration
+│   ├── duckduckgo/      # Domain-specific Scenarios
 │   ├── page_objects/    # Zero-Code YAML Locators (POM)
-│   ├── steps/           # Reusable Gherkin glue
-│   └── environment.py   # Global framework lifecycle hooks
-└── docs/                # Extended documentation (Step Reference, etc.)
+│   ├── steps/           # Reusable Step Logic
+│   └── environment.py   # Global Hook Registry
+└── docs/                # Technical Documentation & Guides
 ```
 
 ## 🔧 Developer Experience (DX)
 
-- **One-Click Linting**: Run `lint_local.bat` to verify your changes locally.
-- **Auto-Updates**: Stay secure and current with built-in Dependabot integration.
-- **Issue Templates**: Professional interaction with standardized contribution flows.
+- **Local Validation**: Run `lint_local.bat` to ensure code compliance before pushing.
+- **Self-Healing Dependencies**: Automated weekly updates via **Dependabot**.
+- **Guided Contributions**: Clear `CONTRIBUTING.md` and Issue Templates for seamless collaboration.
+- **API/GUI Step Library**: Reference `docs/steps.md` for the full Gherkin vocabulary.
 
 ---
 
 <p align="center">
-  Built with excellence by <b>Carlos Camara</b>
+  Crafted with excellence by <b>Carlos Camara</b>
 </p>
