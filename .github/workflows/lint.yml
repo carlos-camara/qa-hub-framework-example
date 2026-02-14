@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Run Generic Linter
-        uses: Carlos/qa-hub-actions/lint-codebase@main
+        uses: carlos-camara/qa-hub-actions/lint-codebase@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           validate-python: 'true'
