@@ -13,7 +13,9 @@ duckduckgo_home:
   logo:
     type: webelement
     by: css
-    value: "a[href='/'], .header__logo, #logo_homepage, #logo_homepage_link, img[alt*='DuckDuckGo']"
+    value: >-
+      a[href='/'], .header__logo, #logo_homepage, #logo_homepage_link,
+      img[alt*='DuckDuckGo']
     wait_load: false
   results_stats:
     type: text

@@ -3,7 +3,7 @@
 <div align="center">
   <img src="assets/logo.png" width="180" alt="QA Hub Logo">
   
-  ### Better Testing • Faster Feedback • Total Confidence
+## Better Testing • Faster Feedback • Total Confidence
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
   [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/downloads/release/python-3100/)
