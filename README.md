@@ -100,6 +100,6 @@ We adhere to the highest standards of professional software development:
 
 ---
 
-<p align="center">
-  <i>Maintained with ❤️ by the QA Hub Community</i>
-</p>
+<div align="center">
+  <i>Designed & Engineered by <b>[Carlos Cámara](https://github.com/carlos-camara)</b></i>
+</div>
