@@ -13,5 +13,5 @@ Feature: DuckDuckGo Search Functionality
     And I press the "ENTER" key on the element "search_input"
     
     # Validation
-    Then I wait for "2" seconds
+    Then I wait until the text "QA Hub Framework" is visible
     And I should see the text "QA Hub Framework"
