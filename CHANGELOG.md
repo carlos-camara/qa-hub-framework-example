@@ -21,7 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.1.0] - 2026-02-18
 
-### Added
+### Changed
 - Standardized S3 report deployment via `deploy-reports-s3` action.
 - Unified Linting pipeline using `qa-hub-actions/lint-codebase`.
 - Concurrency and timeout controls for all CI/CD workflows.

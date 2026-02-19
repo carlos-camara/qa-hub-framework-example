@@ -23,7 +23,7 @@ jobs:
       github.actor == 'dependabot[bot]'
 
     steps:
-      - name:  Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0

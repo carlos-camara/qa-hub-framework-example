@@ -36,8 +36,10 @@ jobs:
         uses: carlos-camara/qa-hub-actions/run-tests@main
         with:
           project-name: 'duckduckgo-example'
-          test-command-api: "qa-hub run --path features/duckduckgo/api --tags @smoke"
-          test-command-gui: "qa-hub run --path features/duckduckgo/gui --tags @smoke"
+          test-command-api: >
+            qa-hub run --path features/duckduckgo/api --tags @smoke
+          test-command-gui: >
+            qa-hub run --path features/duckduckgo/gui --tags @smoke
           headless: 'true'
           
       - name: 📊 Collect & Publish Results

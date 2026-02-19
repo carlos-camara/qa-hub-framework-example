@@ -1,20 +1,21 @@
-name: "🐛 Anomaly Briefing"
-description: "Found a deviation from the expected high-fidelity behavior?"
-title: "fix: <brief_description>"
+---
+name: "Anomalía Determinada"
+description: "¿Detectada una desviación en el comportamiento de alta fidelidad?"
+title: "fix: <breve_descripción>"
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## 🛡️ Anomaly Report
+        ## 🛡️ Reporte de Anomalía
         > [!WARNING]
-        > Before reporting, please ensure this is not a known architectural limitation.
+        > Asegúrate de que esto no sea una limitación arquitectónica conocida.
   - type: textarea
     id: context
     attributes:
-      label: "Architectural Context"
-      description: "What was the intended orchestration? (e.g. GUI Test on DuckDuckGo)"
-      placeholder: "Intent: Standard GUI search verification..."
+      label: "Contexto Arquitectónico"
+      description: "¿Cuál era la orquestación prevista? (ej. DuckDuckGo)"
+      placeholder: "Intento: Verificación básica de búsqueda..."
     validations:
       required: true
   - type: textarea

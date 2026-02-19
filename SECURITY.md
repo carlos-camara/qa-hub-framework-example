@@ -18,12 +18,12 @@ We prioritize security updates for the current major version to ensure maximum s
 
 ## 🚨 Reporting a Vulnerability
 
-We take the security of the QA Hub ecosystem seriously. If you discover a vulnerability, please do **NOT** open a public issue. 
+We take the security of the QA Hub ecosystem seriously. If you discover a vulnerability, please do **NOT** open a public issue.
 
 > [!CAUTION]
 > **Vulnerability Disclosure**: Opening public issues for security vulnerabilities puts the entire ecosystem at risk. Always follow the responsible disclosure path below.
 
-Instead, please send an encrypted report to **carlos.camara@example.com**.
+Instead, please send an encrypted report to <carlos.camara@example.com>.
 
 ### 📝 Reporting Criteria
 - **Description**: Detailed overview of the vulnerability.

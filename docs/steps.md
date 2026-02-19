@@ -26,6 +26,6 @@ This document provides a reference of the most common Gherkin steps available in
 
 > [!TIP]
 > **Adaptive Waiting**: Always prefer `I wait until the text "{text}" is visible` over explicit sleeps. It makes your tests faster and more resilient by continuing as soon as the element appears.
-
+>
 > [!NOTE]
 > All steps support **I18n tokens** ([LANG:key]) and **Variables** ([UUID], [NOW]) automatically via the framework's token resolution engine.

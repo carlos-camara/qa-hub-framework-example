@@ -1,6 +1,7 @@
-name: "💡 Enhancement Proposal"
-description: "Have a vision for a new intelligence layer or feature?"
-title: "feat: <brief_description>"
+---
+name: "💡 Propuesta de Mejora"
+description: "¿Tienes una visión para una nueva capa de inteligencia?"
+title: "feat: <breve_descripción>"
 labels: ["enhancement"]
 body:
   - type: markdown

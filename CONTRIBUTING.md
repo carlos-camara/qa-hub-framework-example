@@ -31,7 +31,7 @@ This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participatin
 ## 🔄 The Contribution Workflow
 1. **Branch Orchestration**: Use semantic naming: `feat/`, `fix/`, `docs/`, or `refactor/`.
 2. **Commit Chronology**: Follow [Conventional Commits](https://www.conventionalcommits.org/) standards.
-3. **Self-Verification**: 
+3. **Self-Verification**:
    - Run `.\lint_local.bat` to verify zero-debt standards.
    - Run `.\run_tests.bat` locally to ensure no functional drift.
 4. **Pull Request**: Open against the `devel` branch with a comprehensive description.
