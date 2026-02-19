@@ -25,8 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     if: >
-      github.event.workflow_run.event == 'pull_request' ||
-      github.event.workflow_run.event == 'push'
+      github.ref == 'refs/heads/main' &&
+      (github.event.workflow_run.event == 'pull_request' ||
+      github.event.workflow_run.event == 'push' ||
+      github.event_name == 'workflow_dispatch')
     steps:
       - name: ☁️ Deploy Reports to S3
         uses: carlos-camara/qa-hub-actions/deploy-reports-s3@main
