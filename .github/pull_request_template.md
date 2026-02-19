@@ -26,6 +26,4 @@
 - [ ] 🧪 Smoke Suite PASSED
 - [ ] 📉 Regression Suite PASSED
 
-
 ---
-*QA Hub Intelligence Service*
