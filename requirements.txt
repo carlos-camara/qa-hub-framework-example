@@ -1,3 +1,4 @@
 # QA Hub Framework Example Dependencies
 # This project relies on the qa-hub-framework repository.
+# Standardized to Elite Engineering Standard 💎
 -e git+https://github.com/carlos-camara/qa-hub-framework.git#egg=qa-automation-framework
