@@ -1,0 +1,28 @@
+---
+DevOps:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/**/*"
+          - "*.json"
+          - "*.md"
+          - "run_tests.bat"
+          - ".gitignore"
+
+"QA: Feature":
+  - changed-files:
+      - any-glob-to-any-file: "features/duckduckgo/**/*"
+
+"QA: Framework":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "features/steps/**/*"
+          - "features/environment.py"
+          - "features/config/**/*"
+          - "requirements.txt"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.md"
+          - "**/README*"
+          - "LICENSE"

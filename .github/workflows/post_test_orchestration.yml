@@ -1,0 +1,48 @@
+---
+name: Post-Test Orchestration
+
+on:
+  workflow_run:
+    workflows: ["Unified Test Suite"]
+    types:
+      - completed
+
+jobs:
+  post-test:
+    runs-on: ubuntu-latest
+    if: >
+      github.event.workflow_run.event == 'pull_request' ||
+      github.event.workflow_run.event == 'push'
+    steps:
+      - name: 📍 Determine Target Branch
+        id: branch
+        shell: bash
+        run: |
+          BRANCH="${{ github.event.workflow_run.head_branch }}"
+          echo "target=${BRANCH}" >> $GITHUB_OUTPUT
+          echo "📍 Target branch: ${BRANCH}"
+
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.branch.outputs.target }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ☁️ Deploy Reports to S3
+        uses: carlos-camara/qa-hub-actions/deploy-reports-s3@main
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: 'us-east-1'
+          s3-bucket: 'qa-hub-reports'
+          github-run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔄 Sync PR Report
+        if: github.event.workflow_run.event == 'pull_request'
+        uses: carlos-camara/qa-hub-actions/publish-test-results@main
+        with:
+          reports-path: "reports/test_run/"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          target: "description"
+          github-run-id: ${{ github.event.workflow_run.id }}

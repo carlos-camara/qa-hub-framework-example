@@ -1,0 +1,51 @@
+name: Unified Test Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: write
+  checks: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  smoke-tests:
+    name: 🧪 Smoke Verification
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: 🔧 Setup Environment
+        uses: carlos-camara/qa-hub-actions/setup-environment@main
+        with:
+          python-version: '3.10'
+          
+      - name: 🚀 Run Smoke Tests
+        uses: carlos-camara/qa-hub-actions/run-tests@main
+        with:
+          project-name: 'duckduckgo-example'
+          test-command-api: "qa-hub run --path features/duckduckgo/api --tags @smoke"
+          test-command-gui: "qa-hub run --path features/duckduckgo/gui --tags @smoke"
+          headless: 'true'
+          
+      - name: 📊 Collect & Publish Results
+        if: always()
+        uses: carlos-camara/qa-hub-actions/collect-and-publish@main
+        with:
+          reports-path: "reports/test_run"
+          screenshots-path: "features/resources/screenshots/*.png"
+          upload-artifacts: true
+          publish-results: true
+
+      - name: 📝 Publish PR Results
+        if: always() && github.event_name == 'pull_request'
+        uses: carlos-camara/qa-hub-actions/publish-test-results@main
+        with:
+          reports-path: "junit-results"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          target: "description"
