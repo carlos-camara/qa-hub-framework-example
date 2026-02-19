@@ -1,21 +1,16 @@
 # Security Policy
 
 ## Supported Versions
-
-The following versions of QA Hub Framework Example are currently supported with security updates:
+We prioritize security updates for the current major version.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| v1.0.x  | :white_check_mark: |
-| < v1.0  | :x:                |
+| v1.x    | ✅ Yes             |
+| < v1.0  | ❌ No              |
 
 ## Reporting a Vulnerability
+We take the security of the QA Hub ecosystem seriously. If you discover a vulnerability, please do NOT open a public issue. 
 
-We take the security of our project seriously. If you believe you have found a security vulnerability in this example implementation, please report it to us by:
+Instead, please send an encrypted report to **carlos.camara@example.com**.
 
-1. Opening a confidential issue on GitHub (if available).
-2. Sending an email to **<carlos.camara@example.com>**.
-
-Please provide a detailed description of the vulnerability, steps to reproduce it, and any potential impact. We will acknowledge your report within 48 hours and provide a timeline for a fix if necessary.
-
-Thank you for helping keep QA Hub Framework Example secure!
+We will acknowledge your report within 48 hours and provide a detailed timeline for remediation.

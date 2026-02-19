@@ -1,148 +1,120 @@
-<!-- markdownlint-disable MD041 -->
+# <div align="center">🛡️ QA HUB: REFERENCE IMPLEMENTATION</div>
+
+<div align="center">
+  <h3>Next-Gen Orchestration & Engineering Intelligence</h3>
+  <p><i>The Gold Standard blueprint for building high-performance, ultra-premium automation suites.</i></p>
+</div>
+
 <div align="center">
 
-# QA Hub Framework Example
-## 🚀 Enterprise-Grade Test Automation Standard
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-0F172A?style=for-the-badge&logo=python&logoColor=38bdf8)](https://www.python.org/)
+[![Framework: QA Hub](https://img.shields.io/badge/Framework-QA_Hub-0F172A?style=for-the-badge&logo=testing-library&logoColor=f59e0b)](https://github.com/carlos-camara/qa-hub-framework)
+[![License: MIT](https://img.shields.io/badge/License-MIT-0F172A?style=for-the-badge&logo=open-source-initiative&logoColor=white)](LICENSE)
 
-[![CI Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/tests.yml)
+[![CI Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/test_suite.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/test_suite.yml)
 [![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-<br>
-
-**Accelerate your Quality Assurance with a framework designed for rigor, scalability, and developer joy.**  
-*Strict Typing • YAML-Driven Locators • Zero-Boilerplate Gherkin*
-
-[Report Bug](https://github.com/carlos-camara/qa-hub-framework-example/issues) · [Request Feature](https://github.com/carlos-camara/qa-hub-framework-example/issues)
+[![PR Intelligence](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/pr_intelligence.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/pr_intelligence.yml)
 
 </div>
 
----
-
-## 🏛️ Executive Summary
-
-This repository serves as the **Gold Standard Reference Implementation** for the [QA Hub Framework](https://github.com/carlos-camara/qa-hub-framework). It is not just a demo; it is a blueprint for building high-performance automation suites that scale with your enterprise.
-
-Here, you will find a fully functional test suite for **DuckDuckGo**, demonstrating how to orchestrate:
-- **GUI Testing**: Robust, self-healing Selenium/Playwright interactions.
-- **API Testing**: High-speed HTTP validations integrated seamlessy.
-- **CI/CD Pipelines**: Production-ready GitHub Actions workflows.
+<br/>
 
 ---
 
-## 💎 why QA Hub?
+## 🌟 Executive Overview
 
-We believe test automation should be **resilient by default** and **readable by everyone**.
+This repository is the **mission-critical reference** for the [QA Hub Framework](https://github.com/carlos-camara/qa-hub-framework). It demonstrates a high-fidelity implementation of BDD-driven automation for DuckDuckGo, engineered for surgical precision and executive-ready reporting.
 
-| Feature | Impact |
-| :--- | :--- |
-| **Separation of Concerns** | Locators live in strict YAML files, keeping your code pure and logic-focused. |
-| **Universally Readable** | Gherkin steps are written in natural language, bridging the gap between QA, Dev, and Product. |
-| **Diagnostic Clarity** | Context-aware logging and screenshot capture on failure mean zero-guessing debugging. |
-| **Execution Agility** | Unified CLI for running tests locally, in Docker, or on remote CI runners without config hell. |
+> [!IMPORTANT]
+> **Production Ready**: This suite doesn't just run tests; it orchestrates a complete quality lifecycle from PR risk analysis to automated S3 report archival.
+
+### 🚀 The Four Pillars
+- **Resilient Execution**: Self-healing GUI interactions and high-speed API validations.
+- **Architectural Purity**: Strict separation of concerns via YAML-driven locators and generic steps.
+- **Engineering Intelligence**: Automated PR summaries, risk detection, and smart labeling.
+- **Enterprise Orchestration**: Standardized CI/CD pipelines with central S3 synchronization.
 
 ---
 
-## 🛠️ System Architecture
+## 🏗️ Ecosystem Architecture
 
-Our **Layered Architecture** ensures long-term maintainability. Changes in the UI don't break your logic; changes in logic don't break your data.
+Our layered architecture ensures zero-debt maintainability and high-fidelity verification.
 
 ```mermaid
 graph TD
-    User([User / CI]) -->|Trigger| CLI[QA Hub CLI]
-    CLI -->|Execute| Runner[Test Runner]
-    
-    subgraph Test Layer
-        Runner -->|Parse| Features[Gherkin Features]
-        Features -->|Map| Steps[Step Definitions]
+    subgraph "Verification Tier (Python)"
+        A["GitHub Actions CI"] -->|Executes| B("BDD API Logic")
+        A -->|Executes| C("BDD GUI Logic")
+    end
+
+    subgraph "Intelligence Tier (Actions)"
+        D["QA Hub Shared Actions"] -->|Standardizes| A
+        E["PR Intelligence"] -->|Analyzes| PR["Pull Request"]
+    end
+
+    subgraph "Persistence Tier (Cloud)"
+        B & C -->|Standardized Results| F["JUnit XML / Screenshots"]
+        F -->|Orchestrated Upload| S3["AWS S3 History"]
     end
     
-    subgraph Core Framework
-        Steps -->|Call| Driver[Driver Factory]
-        Steps -->|Assert| Validators[Assertion Engine]
-    end
-    
-    subgraph Data Layer
-        Steps -->|Lookup| YAML[YAML Locators]
-        Steps -->|Configure| Config[Env Config]
-    end
-    
-    style User fill:#e6f3ff,stroke:#2b6cb0,stroke-width:2px,color:#000
-    style CLI fill:#f3e8ff,stroke:#6b46c1,stroke-width:2px,color:#000
-    style Runner fill:#e6fffa,stroke:#2c7a7b,stroke-width:2px,color:#000
+    style A fill:#6d28d9,color:#fff
+    style D fill:#f59e0b,color:#000
+    style S3 fill:#2563eb,color:#fff
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Performance-Driven CI/CD
 
-<details>
-<summary><b>1. Environmental Prerequisites</b></summary>
+| Status | Pipeline | Operational Responsibility |
+| :---: | :--- | :--- |
+| `🧹` | **Lint Intelligence** | Enforcement of zero-debt documentation and logic standards. |
+| `🧪` | **Unified Suite** | Surgical execution of API and GUI verification layers. |
+| `🧠` | **PR Intelligence** | Dynamic labeling, risk analysis, and automated summaries. |
+| `☁️` | **Report Archival** | Automated deployment to S3 with standardized project pathing. |
 
-Ensure you have Python 3.10+ installed.
+---
 
+## 🚦 Navigation & Initialization
+
+### 📋 Prerequisites
+- **Python**: v3.10+
+- **Chrome / Chromedriver**: Required for full GUI verification.
+- **Git**: Standard workflow.
+
+### 💻 Fast Setup
 ```bash
-# Clone the repository
+# Obtain Registry
 git clone https://github.com/carlos-camara/qa-hub-framework-example.git
 cd qa-hub-framework-example
 
-# Create Virtual Environment
+# Initialize Environment
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
-
-# Install Dependencies
 pip install -r requirements.txt
 ```
-</details>
 
-<details open>
-<summary><b>2. Execution Guide</b></summary>
-
-Use the powerful **QA Hub CLI** to run your tests.
-
+### 🎯 Registry Execution
 ```bash
-# 🟢 Run Smoke Tests
+# 🟢 Smoke Suite (High-Speed Selection)
 python -m qa_framework.cli run --tags @smoke
 
-# 🖥️ Run GUI Tests in Headed Mode (Visual)
+# 🖥️ Visual Execution (Headed)
 python -m qa_framework.cli run --path features/duckduckgo/gui/ --no-headless
 
-# 📊 Generate Allure Reports (Optional)
-python -m qa_framework.cli run --tags @regression --report allure
-```
-</details>
-
----
-
-## 📂 Project Blueprint
-
-A clean structure for a clean mind.
-
-```text
-qa-hub-framework-example/
-├── .github/workflows/       # 🤖 CI/CD Pipelines (Lint, Test, Release)
-├── features/                # 🧪 Test Specifications
-│   ├── config/              #    ├── Environment Configuration
-│   ├── duckduckgo/          #    ├── Domain-Specific Features
-│   ├── page_objects/        #    ├── YAML Locator Definitions
-│   └── steps/               #    └── Step Implementations
-├── requirements.txt         # 📦 Dependency Management
-└── README.md                # 📘 You are here
+# 🏢 Standardized Project Run
+python -m qa_framework.cli run --project duckduckgo-example
 ```
 
 ---
 
-## 🛡️ Governance & Standards
-
-We commit to the highest standards of engineering excellence.
-
-* **Security**: Please refer to our [Security Policy](SECURITY.md).
-* **Conduct**: We foster an inclusive environment via our [Code of Conduct](CODE_OF_CONDUCT.md).
-* **Contribution**: Want to help? Check out our [Contributing Guidelines](.github/CONTRIBUTING.md).
+## 🤝 Collaboration & Support
+We prioritize high-fidelity engineering standards and open collaboration.
+- 📋 [Contribution Blueprint](CONTRIBUTING.md)
+- 🛡️ [Security Policy](SECURITY.md)
+- 📜 [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ---
-
 <div align="center">
-  <small>Designed & Engineered by <a href="https://github.com/carlos-camara">Carlos Cámara</a></small>
+  <i>Designed & Engineered with Precision by <b><a href="https://github.com/carlos-camara">Carlos Cámara</a></b></i>
 </div>
