@@ -13,7 +13,7 @@
 
 [![CI Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/test_suite.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/test_suite.yml)
 [![Lint Status](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/lint.yml)
-[![PR Intelligence](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/pr_intelligence.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/pr_intelligence.yml)
+[![PR Intelligence Engine](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/pr_intelligence.yml/badge.svg)](https://github.com/carlos-camara/qa-hub-framework-example/actions/workflows/pr_intelligence.yml)
 
 </div>
 
@@ -31,14 +31,14 @@ This repository is the **mission-critical reference** for the [QA Hub Framework]
 ### 🚀 The Four Pillars
 - **Resilient Execution**: Self-healing GUI interactions and high-speed API validations.
 - **Architectural Purity**: Strict separation of concerns via YAML-driven locators and generic steps.
-- **Engineering Intelligence**: Automated PR summaries, risk detection, and smart labeling.
+- **Engineering Intelligence**: Powered by generalized actions for PR hygiene, risk detection, and churn analysis.
 - **Enterprise Orchestration**: Standardized CI/CD pipelines with central S3 synchronization.
 
 ---
 
 ## 🏗️ Ecosystem Architecture
 
-Our layered architecture ensures zero-debt maintainability and high-fidelity verification.
+Our layered architecture ensures zero-debt maintainability and high-fidelity verification, delegating heavy intelligence to global, reusable components.
 
 ```mermaid
 graph TD
@@ -47,9 +47,10 @@ graph TD
         A -->|Executes| C("BDD GUI Logic")
     end
 
-    subgraph "Intelligence Tier (Actions)"
-        D["QA Hub Shared Actions"] -->|Standardizes| A
-        E["PR Intelligence"] -->|Analyzes| PR["Pull Request"]
+    subgraph "Generalized Intelligence (QA Hub Actions)"
+        D["pr-intelligence"] -->|Hygiene/Risk| A
+        E["pr-churn-analyzer"] -->|Test Debt| A
+        S["pr-summarizer"] -->|AI Analysis| A
     end
 
     subgraph "Persistence Tier (Cloud)"
@@ -68,9 +69,9 @@ graph TD
 
 | Status | Pipeline | Operational Responsibility |
 | :---: | :--- | :--- |
-| `🧹` | **Lint Intelligence** | Enforcement of zero-debt documentation and logic standards. |
+| `💅` | **Lint - Super-Linter** | Enforcement of zero-debt documentation and logic standards. |
 | `🧪` | **Unified Suite** | Surgical execution of API and GUI verification layers. |
-| `🧠` | **PR Intelligence** | Dynamic labeling, risk analysis, and automated summaries. |
+| `🧠` | **PR Intelligence** | Dynamic labeling, risk analysis, and automated summaries via `qa-hub-actions`. |
 | `☁️` | **Report Archival** | Automated deployment to S3 with standardized project pathing. |
 
 ---
@@ -102,17 +103,20 @@ python -m qa_framework.cli run --tags @smoke
 # 🖥️ Visual Execution (Headed)
 python -m qa_framework.cli run --path features/duckduckgo/gui/ --no-headless
 
-# 🏢 Standardized Project Run
+# 🏢 Standardized Project Run (Centralized Reporting)
 python -m qa_framework.cli run --project duckduckgo-example
 ```
 
 ---
 
-## 🤝 Collaboration & Support
-We prioritize high-fidelity engineering standards and open collaboration.
-- 📋 [Contribution Blueprint](CONTRIBUTING.md)
-- 🛡️ [Security Policy](SECURITY.md)
-- 📜 [Code of Conduct](CODE_OF_CONDUCT.md)
+## 🛡️ Elite Governance
+
+This repository adheres to the highest standards of open-source maintenance and engineering excellence.
+
+- 📈 [Changelog](CHANGELOG.md) - High-fidelity history of ecosystem evolution.
+- 🤝 [Contribution Blueprint](CONTRIBUTING.md) - Guidelines for high-performance contributions.
+- 🛡️ [Security Policy](SECURITY.md) - Responsible disclosure and vulnerability management.
+- 📜 [Code of Conduct](CODE_OF_CONDUCT.md) - Commitment to a professional community.
 
 ---
 <div align="center">

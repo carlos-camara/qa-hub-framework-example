@@ -10,7 +10,8 @@ This document provides a reference of the most common Gherkin steps available in
 - `When I type "{text}" into the "{element_name}"` - Types text into a specific element on the current page.
 - `And I click on the "{element_name}"` - Clicks a specific element.
 - `Then the text of "{element_name}" should be "{text}"` - Verifies the text content of an element.
-- `And I wait for "{seconds}" seconds` - Explicit wait.
+- `And I wait until the text "{text}" is visible` - **[NEW]** Adaptive wait for asynchronous content with failure diagnostics.
+- `And I wait for "{seconds}" seconds` - Explicit wait (use sparingly).
 
 ### 🌐 API Interaction
 - `When I send a GET request to "{endpoint}"` - Sends an API GET request.
@@ -24,4 +25,7 @@ This document provides a reference of the most common Gherkin steps available in
 ---
 
 > [!TIP]
-> Use these steps as building blocks to create complex and readable test scenarios.
+> **Adaptive Waiting**: Always prefer `I wait until the text "{text}" is visible` over explicit sleeps. It makes your tests faster and more resilient by continuing as soon as the element appears.
+
+> [!NOTE]
+> All steps support **I18n tokens** ([LANG:key]) and **Variables** ([UUID], [NOW]) automatically via the framework's token resolution engine.
