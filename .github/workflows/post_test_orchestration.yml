@@ -6,11 +6,18 @@ on:
     workflows: ["Unified Test Suite"]
     types:
       - completed
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Manual Run ID to process (optional)'
+        required: false
+        type: string
 
 permissions:
   contents: read
   pull-requests: write
   issues: write
+  id-token: write
 
 jobs:
   post-test:
@@ -25,11 +32,11 @@ jobs:
         uses: carlos-camara/qa-hub-actions/deploy-reports-s3@main
         with:
           project-name: "duckduckgo"
+          s3-bucket: ${{ secrets.AWS_S3_BUCKET }}
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-1'
-          s3-bucket: 'qa-hub-reports'
-          run-id: ${{ github.event.workflow_run.id }}
+          aws-region: ${{ secrets.AWS_REGION }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.inputs.run_id || github.event.workflow_run.id }}
           upload-reports: 'true'
           upload-screenshots: 'true'
