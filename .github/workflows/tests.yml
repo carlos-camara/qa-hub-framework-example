@@ -11,7 +11,7 @@ jobs:
   smoke-tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       
       - name: Setup Environment
         uses: carlos-camara/qa-hub-actions/setup-environment@main
@@ -30,7 +30,7 @@ jobs:
           
       - name: Upload Test Results
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: reports/test_run/
