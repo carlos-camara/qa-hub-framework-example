@@ -1,24 +1,30 @@
----
-name: Feature request
-description: Suggest an idea for this example project.
+name: "💡 Enhancement Proposal"
+description: "Have a vision for a new intelligence layer or feature?"
+title: "feat: <brief_description>"
 labels: ["enhancement"]
 body:
-  - type: textarea
-    id: feature-description
+  - type: markdown
     attributes:
-      label: Feature Description
-      description: A clear and concise description of what the feature is.
+      value: |
+        ## 🧠 Engineering Enhancement
+        > [!TIP]
+        > Describe the vision for evolving the QA Hub ecosystem.
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem/Opportunity Statement"
+      description: "What friction are we trying to eliminate?"
     validations:
       required: true
   - type: textarea
-    id: problem-solved
+    id: solution
     attributes:
-      label: Problem Solved
-      description: Is your feature request related to a problem? Please describe.
-  - type: textarea
-    id: proposed-solution
-    attributes:
-      label: Proposed Solution
-      description: A clear and concise description of what you want to happen.
+      label: "Proposed Architectural Solution"
+      description: "A detailed technical design of the enhancement."
     validations:
       required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternative Considerations"
+      description: "What other options were evaluated?"

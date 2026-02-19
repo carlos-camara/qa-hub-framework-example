@@ -1,42 +1,44 @@
----
-name: Bug report
-description: Create a report to help us improve the framework example.
+name: "🐛 Anomaly Briefing"
+description: "Found a deviation from the expected high-fidelity behavior?"
+title: "fix: <brief_description>"
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        ## 🛡️ Anomaly Report
+        > [!WARNING]
+        > Before reporting, please ensure this is not a known architectural limitation.
   - type: textarea
-    id: bug-description
+    id: context
     attributes:
-      label: Bug Description
-      description: A clear and concise description of what the bug is.
-      placeholder: Describe the issue...
+      label: "Architectural Context"
+      description: "What was the intended orchestration? (e.g. GUI Test on DuckDuckGo)"
+      placeholder: "Intent: Standard GUI search verification..."
     validations:
       required: true
   - type: textarea
-    id: reproduction-steps
+    id: reproduction
     attributes:
-      label: Steps to Reproduce
-      description: How can we reproduce this issue?
+      label: "Surgical Reproduction"
+      description: "Exact steps to trigger the anomaly."
       placeholder: |
-        1. Run `python -m qa_framework.cli run...`
-        2. Observe error...
+        1. Run `run_tests.bat`
+        2. Wait for GUI execution...
     validations:
       required: true
   - type: textarea
-    id: expected-behavior
+    id: outcomes
     attributes:
-      label: Expected Behavior
-      description: What did you expect to happen?
+      label: "Technical Drift"
+      description: "Expected vs Actual outcomes."
+      placeholder: |
+        Expected: Element visible in 5s.
+        Actual: Timeout after 10s.
     validations:
       required: true
-  - type: input
-    id: environment
+  - type: textarea
+    id: evidence
     attributes:
-      label: Environment
-      description: OS, Python version, Browser version.
-      placeholder: e.g. Windows 11, Python 3.10, Chrome 120
-    validations:
-      required: true
+      label: "Visual/Log Evidence"
+      description: "Attach screenshots, console telemetry, or report fragments."
