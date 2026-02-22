@@ -1,6 +1,5 @@
-# <div align="center">🛡️ QA HUB SECURITY POLICY</div>
-
 <div align="center">
+  <h1>🛡️ Security Policy</h1>
   <p><i>Prioritizing the integrity and safety of the Next-Gen Orchestration ecosystem.</i></p>
 </div>
 

@@ -1,4 +1,7 @@
-# 📔 Changelog
+<div align="center">
+  <h1>📔 Project Changelog</h1>
+  <p><i>High-fidelity documentation of the project's architectural evolution and technical milestones.</i></p>
+</div>
 
 All notable changes to this project will be documented in this file.
 
