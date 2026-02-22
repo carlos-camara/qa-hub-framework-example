@@ -113,11 +113,7 @@ python -m qa_framework.cli run --project duckduckgo-example
 
 This repository adheres to the highest standards of open-source maintenance and engineering excellence.
 
-- 📈 <div align="center">
-  <h1>📔 Project Changelog</h1>
-  <p><i>High-fidelity documentation of the project's architectural evolution and technical milestones.</i></p>
-</div>
-](CHANGELOG.md) - High-fidelity history of ecosystem evolution.
+- 📈 [Changelog](CHANGELOG.md) - High-fidelity history of ecosystem evolution.
 - 🤝 [Contribution Blueprint](CONTRIBUTING.md) - Guidelines for high-performance contributions.
 - 🛡️ [Security Policy](SECURITY.md) - Responsible disclosure and vulnerability management.
 - 📜 [Code of Conduct](CODE_OF_CONDUCT.md) - Commitment to a professional community.
