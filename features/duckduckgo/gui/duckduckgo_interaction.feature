@@ -1,4 +1,4 @@
-@gui @duckduckgo
+@CC-547 @gui @duckduckgo
 Feature: DuckDuckGo Search Functionality
 
   Background:
@@ -6,7 +6,7 @@ Feature: DuckDuckGo Search Functionality
     And the "duckduckgo_home" page is displayed
     Then the URL should contain "duckduckgo"
 
-  @smoke
+  @CC-548 @smoke
   Scenario: Basic Search Verification
     # Handle optional consent if needed (CI depends on IP location)
     And I handle the consent popup

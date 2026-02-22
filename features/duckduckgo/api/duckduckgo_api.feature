@@ -1,10 +1,10 @@
-@api @duckduckgo
+@CC-545 @api @duckduckgo
 Feature: DuckDuckGo API Availability
 
   Background:
     Given the API base URL is "https://duckduckgo.com"
 
-  @smoke
+  @CC-546 @smoke
   Scenario: Verify DuckDuckGo connectivity
     When I send a "GET" request to "/"
     Then the response status code should be 200
