@@ -1,4 +1,7 @@
-# 📖 Step Reference Guide
+<div align="center">
+  <h1>📖 Step Reference Guide</h1>
+  <p><i>High-fidelity blueprint for Gherkin-driven technical validation.</i></p>
+</div>
 
 This document provides a reference of the most common Gherkin steps available in the **QA Hub Framework** and the custom steps specific to this example project.
 

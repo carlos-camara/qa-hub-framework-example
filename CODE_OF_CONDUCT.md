@@ -1,6 +1,5 @@
-# <div align="center">📜 QA HUB CODE OF CONDUCT</div>
-
 <div align="center">
+  <h1>📜 Code of Conduct</h1>
   <p><i>Fostering a professional and inclusive high-performance engineering community.</i></p>
 </div>
 
