@@ -1,0 +1,26 @@
+<testsuite name="duckduckgo.gui.duckduckgo_interaction.DuckDuckGo Search Functionality" tests="1" errors="0" failures="1" skipped="0" time="18.621468" timestamp="2026-02-19T13:38:50.377839" hostname="INSPIRON-CARLOS"><testcase classname="duckduckgo.gui.duckduckgo_interaction.DuckDuckGo Search Functionality" name="Basic Search Verification" status="failed" time="18.621468"><failure type="NoneType" message="None">
+<![CDATA[
+Failing step: And I should see the text "Selenium" ... undefined in 0.000s
+Location: features/duckduckgo/gui/duckduckgo_interaction.feature:22
+None]]>
+</failure><system-out>
+<![CDATA[
+@scenario.begin
+
+  @smoke
+  Scenario: Basic Search Verification
+    Given I navigate to the dashboard at "https://duckduckgo.com" ... passed in 2.636s
+    And the "duckduckgo_home" page is displayed ... passed in 0.124s
+    Then the URL should contain "duckduckgo" ... passed in 0.010s
+    And I handle the consent popup ... passed in 11.093s
+    When I type "Selenium" into the "search_input" ... passed in 0.155s
+    And I press the "ENTER" key on the element "search_input" ... passed in 0.054s
+    Then I should see the "results_container" ... passed in 4.212s
+    And I wait until the text "Selenium" is visible ... passed in 0.300s
+    And I should see the "first_result" ... passed in 0.037s
+    And I should see the text "Selenium" ... undefined in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
