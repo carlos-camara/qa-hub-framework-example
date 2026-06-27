@@ -1,7 +1,6 @@
-# <div align="center">🤝 QA HUB CONTRIBUTION BLUEPRINT</div>
-
 <div align="center">
-  <p><i>Building the future of Next-Gen Orchestration & Engineering Intelligence.</i></p>
+  <h1>🤝 Contribution Blueprint</h1>
+  <p><i>Architecting the future of Next-Gen Orchestration & Engineering Intelligence.</i></p>
 </div>
 
 ---
